@@ -16,7 +16,7 @@ const fadeMeshes =(group, opacity) =>{
     })
 }
 
-export const ModelSwitcher = ({scale ,isMobile }) => {
+export const ModelSwitcher = ({scale ,isMobile }) => {git
     const smallMacbookRef = useRef();
     const largeMacbookRef = useRef();
 
