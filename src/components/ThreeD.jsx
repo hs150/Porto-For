@@ -1,14 +1,24 @@
 import React from 'react'
 import useYourStore from "../store";
-import clsx from "clsx";
+import clsx from "clsx"
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import MacModel14 from "./models/Macbook-14.jsx";
+import StudioLights from "./models/three/StudioLights.jsx";
+import ModelSwitcher from "./models/three/ModelSwitcher.jsx";
+import {useMediaQuery} from "react-responsive";
+
 
 const Product = () => {
     const { color, scale, setColor, setScale } = useYourStore();
+
+    const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
+
     return (
         <section id="product-viewer">
             <h2>Right now i don't even know </h2>
             <div className="controls">
-                <p className="info">Name likhna h 3d model ka{color}</p>
+                <p className="info">{scale} likhna h 3d model {color}</p>
 
                 <div className="flex-center gap-5 mt-5">
                     <div className="color-control">
@@ -17,18 +27,25 @@ const Product = () => {
                         />
 
                         <div onClick={()=> setColor('#2e2c2e')}
-                             className={clsx('bg-neutral-900', color==='#adb5bd' && 'active')}
+                             className={clsx('bg-neutral-900', color==='#2e2c2e' && 'active')}
                         />
                     </div>
 
                     <div className="size-control" >
-                        <div><p>Smaller</p></div>
-                        <div><p>Bigger</p></div>
+                        <div onClick={()=> setScale(0.06)}
+                             className={clsx(scale===0.06 ?'bg-white text-black' : 'bg-transparent')}
+                        ><p>S</p></div>
+                        <div onClick={()=> setScale(0.08)}
+                             className={clsx(scale===0.08 ?'bg-white text-black' : 'bg-transparent')}
+                        ><p>B</p></div>
                     </div>
                 </div>
             </div>
 
-            <p className="text-white text-4xl">Render Canvas</p>
+            <Canvas id="canvas" camera={{position : [0,2,5], fov: 50, near:0.1, far:100}}>
+               <StudioLights />
+                  <ModelSwitcher scale={isMobile ? scale - 0.03: scale} isMobile={isMobile} />
+            </Canvas>
         </section>
     )
 }

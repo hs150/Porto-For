@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
        <header>
            <nav>
-               <img src="/logo.svg" alt="Apple logo" />
+               <img className="flex-center ml-10" src="/logo.svg" alt="Apple logo" />
 
                <ul>
                    {navLinks.map(({ label})=>(
@@ -14,12 +14,12 @@ const Navbar = () => {
                    ))}
                </ul>
 
-               <div className="flex-center gaap-3">
+               <div className="flex-center gap-3 mr-4">
                    <button>
                        <img src="/search.svg" alt="Search(Why are you even using it??)" />
                    </button>
                    <button>
-                       <img src="/cart.svg" alt="It's just looking cool at this point" />
+                       <img src="/cart.svg" alt="It 's just looking cool at this point" />
                    </button>
                </div>
            </nav>
