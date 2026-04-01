@@ -2,10 +2,8 @@ import React from 'react'
 import useYourStore from "../store";
 import clsx from "clsx"
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import MacModel14 from "./models/Macbook-14.jsx";
-import StudioLights from "./models/three/StudioLights.jsx";
-import ModelSwitcher from "./models/three/ModelSwitcher.jsx";
+import StudioLights from "./three/StudioLights.jsx";
+import ModelSwitcher from "./three/ModelSwitcher.jsx";
 import {useMediaQuery} from "react-responsive";
 
 
@@ -18,7 +16,7 @@ const Product = () => {
         <section id="product-viewer">
             <h2>Right now i don't even know </h2>
             <div className="controls">
-                <p className="info">{scale} likhna h 3d model {color}</p>
+                <p className="info">Available sizes of 3d models currently only black and white</p>
 
                 <div className="flex-center gap-5 mt-5">
                     <div className="color-control">
