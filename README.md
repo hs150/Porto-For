@@ -16,15 +16,15 @@
   </section>
 
   <!-- PREVIEW -->
-  <section style="text-align:center; padding:40px;">
+ <!-- <section style="text-align:center; padding:40px;">
     <img src="preview.png" alt="Preview" style="width:90%; border-radius:20px; box-shadow:0 20px 60px rgba(255,255,255,0.1);" />
-  </section>
+  </section> -->
 
   <!-- ABOUT -->
   <section style="padding:60px 20px; max-width:900px; margin:auto;">
     <h2>About the Project</h2>
     <p style="color:#ccc; line-height:1.7;">
-      MacGO is not just a clone — it’s a reimagination of Apple’s digital storytelling.
+      MacGO is a reimagination of Apple’s digital storytelling.
       This project focuses on fluid motion, depth, and interaction. Every scroll,
       hover, and transition is crafted to feel alive.
     </p>
